@@ -51,7 +51,6 @@ public class People {
             }
         }
     }
-
     public void searchPeople(String rank) {
 
     }
