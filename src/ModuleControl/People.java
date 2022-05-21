@@ -18,86 +18,75 @@ public class People {
     private int size;
     private String[] array = new String[size];
 
-    public People()
-    {
-        this.rank=soldier;
-        this.canGoToWar=true;
+    public People() {
+        this.rank = soldier;
+        this.canGoToWar = true;
     }
-    public String getRank(String rank)
-    {
+
+    public String getRank(String rank) {
         return rank;
     }
 
     public void setRank(String rank) {
         this.rank = rank;
     }
-    public void setSize(int size)
-    {
-        this.size=size;
+
+    public void setSize(int size) {
+        this.size = size;
     }
-    public void addPeople(String rank)
-    {
-        int counter=0;
+
+    public void addPeople(String rank) {
+        int counter = 0;
         String[] array = new String[size];
 
-        if(array[counter] == null){
+        if (array[counter] == null) {
             counter++;
-            for (int i = 1;i<size; i++) {
-                if(array[i]==null)
-                {
+            for (int i = 1; i < size; i++) {
+                if (array[i] == null) {
                     array[i] = name;
                 }
-                if(counter==size){
+                if (counter == size) {
                     break;
                 }
             }
         }
     }
-    public void searchPeople(String rank)
-    {
+
+    public void searchPeople(String rank) {
 
     }
-    public void printDependencies(String rank)
-    {
+
+    public void printDependencies(String rank) { //printing dependencies
         int soldierCounter = 0;
-        for(int i = 0; i<size; i++)
-        {
-            if(this.rank==soldier)
-            {
+        for (int i = 0; i < size; i++) {
+            if (this.rank == soldier) {
                 soldierCounter++;
             }
         }
         int captainCounter = 0;
-        for(int i = 0; i<size; i++)
-        {
-            if(this.rank==captain)
-            {
-                int dependencies=0;
-                for(int y=0;y<size;y++)
-                {
-                    if(array[y]==soldier)
-                    {
+        for (int i = 0; i < size; i++) {
+            if (this.rank == captain) {
+                int dependencies = 0;
+                for (int y = 0; y < size; y++) {
+                    if (array[y] == soldier) {
                         dependencies++;
-                        System.out.println("captain has "+dependencies+" dependencies");
+                        System.out.println("captain has " + dependencies + " dependencies");
                     }
                 }
                 captainCounter++;
             }
         }
         int generalCounter = 0;
-        for(int i = 0; i<size; i++)
-        {
-            if(this.rank==general)
-            {
+        for (int i = 0; i < size; i++) {
+            if (this.rank == general) {
                 captainCounter++;
             }
         }
 
     }
-    public interface ableToWar{
+
+    public interface ableToWar {
 
     }
-
-
 }
 
